@@ -1,9 +1,13 @@
-from flask import Flask, render_template, request, jsonify, redirect
-import requests
-from chat_storage import create_chat, add_message, get_chat, list_chats, rename_chat, delete_chat
+from flask import Flask, request, redirect, render_template, jsonify
+import re
+import uuid
+from db import init_db, list_chats, create_chat, get_chat, add_message, rename_chat, delete_chat
 from full_version.app import blueprint as full_bp
 from light_version.app import blueprint as lite_bp
 from config import OPENROUTER_KEY
+
+init_db()
+
 
 app = Flask(__name__)
 app.register_blueprint(full_bp, url_prefix="/full")
