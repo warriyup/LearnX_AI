@@ -1,8 +1,12 @@
-
 from flask import Blueprint, render_template
 
-blueprint = Blueprint("lite", __name__, template_folder="templates", static_folder="static")
+blueprint = Blueprint(
+    "lite",
+    __name__,
+    template_folder="templates",
+    static_folder="static"
+)
 
-@blueprint.get("/")
-def home():
+@blueprint.route("/")
+def lite_home():
     return render_template("index.html")
