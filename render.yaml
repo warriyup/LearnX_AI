@@ -1,8 +1,10 @@
 services:
   - type: web
-    name: LearnX_AI
+    name: learnx-ai
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    region: frankfurt
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
     autoDeploy: true
+    rootDir: "."
