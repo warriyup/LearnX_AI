@@ -1,4 +1,3 @@
-
 from flask import Flask, request, redirect, render_template
 import re
 from full_version.app import blueprint as full_bp
